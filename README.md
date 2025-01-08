@@ -12,7 +12,6 @@ This project aims to analyze football players' performance metrics using various
 4. [Results](#results)
 5. [Players Appearing in Both Results](#players-appearing-in-both-results)
 6. [Conclusion](#conclusion)
-7. [License](#license)
 
 ## Introduction
 
@@ -76,9 +75,6 @@ The results of the analysis include the Euclidean distances of players after app
 
 This project demonstrates the application of statistical normalization techniques to analyze football player performance data. The findings can assist coaches, scouts, and analysts in making data-driven decisions regarding player selection and performance evaluation.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
