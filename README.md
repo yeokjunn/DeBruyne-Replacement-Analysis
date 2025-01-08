@@ -24,27 +24,47 @@ For a detailed walkthrough, please view the source code in order from:
 
 ---
 
+## **Table of Contents**
+
+1. [**About**](#about)  
+2. [**Problem Definition**](#problem-definition)  
+3. [**Models & Metrics Used**](#models-&-metrics-used)  
+4. [**Key Results**](#key-results)  
+   * **4.1** [CDR Conclusion](#cdr-conclusion)  
+   * **4.2** [RScore Conclusion](#rscore-conclusion)  
+   * **4.3** [Pearson's Correlation Conclusion](#pearsons-correlation-conclusion)  
+   * **4.4** [Euclidean Distance Conclusion](#euclidean-distance-conclusion)  
+   * **4.5** [K-Means Clustering Conclusion](#k-means-clustering-conclusion)  
+5. [**Conclusion**](#conclusion)  
+6. [**What Did I Learn?**](#what-did-i-learn)  
+7. [**Future Work**](#future-work)  
+8. [**References**](#references)  
+
+---
+
 ## **Problem Definition**
 
 How can Manchester City identify the best replacement(s) for Kevin De Bruyne based on multiple creative and attacking metrics across the top 5 European leagues? Which machine learning methods are most effective in finding players with similar outputs to KDB?
 
 ---
 
-## **Machine Learning Models Used**
+## **Models & Metrics Used**
 
 - **For CDR Calculation**:  
-  - K-Nearest Neighbors (KNN)  
-  - Ridge Regression  
-  - Support Vector Machines (SVM)
+  - Progressive Passes per 90 - 20%
+  - Progressive Carries per 90 - 20%
+  - Assists per 90 - 30%
+  - Goals per 90 - 10%
+  - Key passes per 90 - 20%
 
 - **For RScore Calculation**:  
-  - Linear Regression  
-  - Polynomial Regression  
-  - K-Nearest Neighbors (KNN)
+  - Creative Decision Rating (CDR) - 65%
+  - League Difficulty - 25%
+  - Age - 10%
 
 - **For Similarity Analysis**:  
   - Pearson's Correlation  
-  - Euclidean Distance  
+  - Euclidean Distance for Multi-Dimensional Similarity
   - K-Means Clustering
 
 ---
@@ -60,8 +80,6 @@ Players identified with similar CDR scores include:
 - **Toni Kroos**  
 - **Luka Modrić**  
 - **Isco**
-
-The Support Vector Machines (SVM) model provided the best predictions with the lowest Mean Squared Error (MSE) for CDR.
 
 ---
 
@@ -120,16 +138,16 @@ While no single player perfectly replicates Kevin De Bruyne’s unique style of 
 
 ---
 
-## **What Did We Learn?**
+## **What Did I Learn?**
 
 1. **Applying Data Cleaning Techniques**:  
    Merging large datasets, handling missing values, and removing outliers were crucial steps.
    
-2. **Experimenting with Normalization Methods**:  
-   Both Min-Max scaling and Z-score normalization were used to improve the accuracy of similarity analysis.
+2. **Experimenting with Normalisation Methods**:  
+   Both Min-Max scaling and Z-score normalisation were used to improve the accuracy of similarity analysis.
    
 3. **Using Advanced Machine Learning Models**:  
-   Techniques such as Support Vector Machines (SVM), K-Nearest Neighbors (KNN), and Polynomial Regression were explored.
+   Techniques such as Euclidean Distance, K-Nearest Neighbors (KNN), and Pearson's Correlation were explored.
 
 4. **Evaluating Similarity Measures**:  
    Pearson’s correlation, Euclidean distance, and K-Means clustering were compared to find the best method for identifying similar players.
@@ -139,7 +157,7 @@ While no single player perfectly replicates Kevin De Bruyne’s unique style of 
 ## **Future Work**
 
 - **Explore More Metrics**:  
-  Including defensive metrics or passing accuracy could enhance the analysis.
+  Including defensive metrics or passing accuracy could enhance the analysis. Match-by-match visual analysis can be implemented for a more in-depth analysis of Kevin De Bruyne's style of play to provide a more holistic representation of how we can replace him.
   
 - **Test Other Clustering Methods**:  
   Methods like DBSCAN or Agglomerative Clustering could be explored.
@@ -151,7 +169,10 @@ While no single player perfectly replicates Kevin De Bruyne’s unique style of 
 
 ## **References**
 
-- **Data Source**: [FBRef Dataset](https://fbref.com/en/)  
-- **Inspiration**: The movie *Moneyball* and advanced football analytics.
+**Data Sources**: 
+- [FBRef Dataset](https://fbref.com/en/)  
+- [TransferMarkt Data](https://www.kaggle.com/datasets/davidcariboo/player-scores)
+- [MPLSoccer Pitch Visualisation](https://mplsoccer.readthedocs.io/en/latest/index.html)
+- [UEFA Men's League Coefficients](https://en.wikipedia.org/wiki/UEFA_coefficient)
 
 ---
