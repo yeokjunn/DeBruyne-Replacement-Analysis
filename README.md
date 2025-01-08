@@ -1,82 +1,157 @@
 # ⚽ Kevin De Bruyne Replacement - Analysis Project ⚽
 
-## Overview
+## About
+This project is inspired by a love for football and data science, particularly the concept of the movie "Moneyball." The focus is on identifying potential replacements for Kevin De Bruyne (*KDB*), one of the most creative midfielders in world football, based on statistical outputs rather than emulating his playing style. The project applies various machine learning methods and similarity measures to analyse players from the top 5 European leagues (England, Germany, Spain, Italy, and France).
 
-This project aims to analyze football players' performance metrics using various statistical techniques, including Min-Max normalization and Z-score normalization. The analysis focuses on identifying player similarities based on their performance data, which can be useful for scouting, team selection, and performance evaluation.
+The objective is to provide data-driven recommendations by identifying players who can replicate De Bruyne’s creative output, thereby helping Manchester City maintain its offensive effectiveness.
 
-## Table of Contents
+This project implements a complete data pipeline:  
+- **Data Collection**  
+- **Data Preparation & Cleaning**  
+- **Exploratory Data Analysis**  
+- **Normalisation Techniques**  
+- **Machine Learning Models**  
 
-1. [Introduction](#introduction)
-2. [Data](#data)
-3. [Normalization Techniques](#normalization-techniques)
-4. [Results](#results)
-5. [Players Appearing in Both Results](#players-appearing-in-both-results)
-6. [Conclusion](#conclusion)
+For a detailed walkthrough, please view the source code in order from:  
+1. **ReadMe File**  
+2. **Data Cleaning**  
+3. **CDR Calculation & Analysis**  
+4. **RScore Calculation & Analysis**  
+5. **Pearson's Correlation Analysis**  
+6. **Euclidean Distance Analysis**  
+7. **K-Means Clustering Analysis**  
+8. **Conclusions**
 
-## Introduction
+---
 
-In modern football analytics, understanding player performance is crucial for making informed decisions. This project utilizes statistical methods to normalize player performance data and calculate Euclidean distances to identify similar players.
+## **Problem Definition**
 
-## Data
+How can Manchester City identify the best replacement(s) for Kevin De Bruyne based on multiple creative and attacking metrics across the top 5 European leagues? Which machine learning methods are most effective in finding players with similar outputs to KDB?
 
-The dataset used in this project includes various performance metrics for football players, such as:
+---
 
-- Player names
-- Performance statistics
-- Euclidean distances calculated after normalization
+## **Machine Learning Models Used**
 
-## Normalization Techniques
+- **For CDR Calculation**:  
+  - K-Nearest Neighbors (KNN)  
+  - Ridge Regression  
+  - Support Vector Machines (SVM)
 
-Two normalization techniques were applied to the dataset:
+- **For RScore Calculation**:  
+  - Linear Regression  
+  - Polynomial Regression  
+  - K-Nearest Neighbors (KNN)
 
-1. **Min-Max Normalization**: This technique scales the data to a fixed range, typically [0, 1]. It is useful for ensuring that all features contribute equally to the distance calculations.
+- **For Similarity Analysis**:  
+  - Pearson's Correlation  
+  - Euclidean Distance  
+  - K-Means Clustering
 
-2. **Z-Score Normalization**: This method standardizes the data based on the mean and standard deviation, allowing for comparison across different scales.
+---
 
-## Results
+## **Key Results**
 
-The results of the analysis include the Euclidean distances of players after applying both normalization techniques. The following players appeared in both results:
+### **CDR Conclusion**  
+Players identified with similar CDR scores include:  
+- **Ousmane Dembélé**  
+- **Jeremy Doku**  
+- **Florian Wirtz**  
+- **Kevin Stöger**  
+- **Toni Kroos**  
+- **Luka Modrić**  
+- **Isco**
 
-### Players Appearing in Both Results
+The Support Vector Machines (SVM) model provided the best predictions with the lowest Mean Squared Error (MSE) for CDR.
 
-1. **Aleksei Miranchuk**
-   - Min-Max Distance: 0.101267
-   - Z-Score Distance: 1.340595
+---
 
-2. **Luka Modrić**
-   - Min-Max Distance: 0.207610
-   - Z-Score Distance: 1.893687
+### **RScore Conclusion**  
+RScore was used to rank midfielders by combining multiple factors:  
+- CDR (65%)  
+- League Difficulty (25%)  
+- Age (10%)
 
-3. **Thomas Müller**
-   - Min-Max Distance: 0.211948
-   - Z-Score Distance: 1.929590
+The top players based on RScore include:  
+- **Luka Modrić**  
+- **Toni Kroos**  
+- **Ivan Rakitić**  
+- **Isco**  
+- **James Maddison**  
+- **Florian Wirtz**
 
-4. **Raphinha**
-   - Min-Max Distance: 0.178372
-   - Z-Score Distance: 1.879958
+---
 
-5. **Imran Louza**
-   - Min-Max Distance: 0.213094
-   - Z-Score Distance: 2.113787
+### **Pearson's Correlation Conclusion**  
+Pearson's correlation was used to find players with the closest statistical output to KDB. Top players include:  
+- **Ezequiel Ávila**  
+- **Morgan Gibbs-White**  
+- **Pablo Sarabia**  
+- **Aleksei Miranchuk**  
+- **Arne Maier**
 
-6. **Ivan Rakitić**
-   - Min-Max Distance: 0.159258
-   - Z-Score Distance: 2.220394
+---
 
-7. **Arne Maier**
-   - Min-Max Distance: 0.203464
-   - Z-Score Distance: 2.179026
+### **Euclidean Distance Conclusion**  
+Using both Min-Max and Z-Score normalization techniques, Euclidean distance was employed to identify players with the shortest distance to KDB. The top players appearing in both results include:  
+- **Aleksei Miranchuk**  
+- **Luka Modrić**  
+- **Thomas Müller**  
+- **Raphinha**  
+- **Ivan Rakitić**  
+- **Harvey Elliott**
 
-8. **Harvey Elliott**
-   - Min-Max Distance: 0.194671
-   - Z-Score Distance: 1.930605
+---
 
-## Conclusion
+### **K-Means Clustering Conclusion**  
+Players were clustered using K-Means (K=70 for Min-Max, K=50 for Z-Score). Kevin De Bruyne was grouped with players such as:  
+- **Raphinha**  
+- **Harvey Elliott**  
+- **Michael Olise**  
+- **Marco Asensio**  
+- **Aleksei Miranchuk**
 
-This project demonstrates the application of statistical normalization techniques to analyze football player performance data. The findings can assist coaches, scouts, and analysts in making data-driven decisions regarding player selection and performance evaluation.
+---
 
+## **Conclusion**
 
-## Acknowledgments
+While no single player perfectly replicates Kevin De Bruyne’s unique style of play, several players across different leagues can be identified based on their similar output. This approach highlights that replacing KDB may require multiple players in different positions to collectively match his creative impact.
 
-- [Your Data Source] - for providing the dataset.
-- [Any Libraries or Tools Used] - for their contributions to the project.
+- **Key Insight**: Player replacement should focus on replicating De Bruyne’s output rather than his playing style. If a single replacement cannot fully cover his CDR, adding multiple players with high CDR in different attacking positions (e.g., a winger or attacking midfielder) can help make up for the lost output.
+
+---
+
+## **What Did We Learn?**
+
+1. **Applying Data Cleaning Techniques**:  
+   Merging large datasets, handling missing values, and removing outliers were crucial steps.
+   
+2. **Experimenting with Normalization Methods**:  
+   Both Min-Max scaling and Z-score normalization were used to improve the accuracy of similarity analysis.
+   
+3. **Using Advanced Machine Learning Models**:  
+   Techniques such as Support Vector Machines (SVM), K-Nearest Neighbors (KNN), and Polynomial Regression were explored.
+
+4. **Evaluating Similarity Measures**:  
+   Pearson’s correlation, Euclidean distance, and K-Means clustering were compared to find the best method for identifying similar players.
+
+---
+
+## **Future Work**
+
+- **Explore More Metrics**:  
+  Including defensive metrics or passing accuracy could enhance the analysis.
+  
+- **Test Other Clustering Methods**:  
+  Methods like DBSCAN or Agglomerative Clustering could be explored.
+  
+- **Integrate Advanced Models**:  
+  Using deep learning models could improve prediction accuracy.
+
+---
+
+## **References**
+
+- **Data Source**: [FBRef Dataset](https://fbref.com/en/)  
+- **Inspiration**: The movie *Moneyball* and advanced football analytics.
+
+---
