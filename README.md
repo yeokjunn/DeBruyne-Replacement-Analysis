@@ -26,19 +26,30 @@ For a detailed walkthrough, please view the source code in order from:
 
 ## **Table of Contents**
 
-1. [**About**](#about)  
-2. [**Problem Definition**](#problem-definition)  
-3. [**Models & Metrics Used**](#models-&-metrics-used)  
-4. [**Key Results**](#key-results)  
+1. [**About**](#about)
+2. [**Project Structure**](#project-structure)
+3. [**Problem Definition**](#problem-definition)  
+4. [**Models & Metrics Used**](#models-&-metrics-used)  
+5. [**Key Results**](#key-results)  
    * **4.1** [CDR Conclusion](#cdr-conclusion)  
    * **4.2** [RScore Conclusion](#rscore-conclusion)  
    * **4.3** [Pearson's Correlation Conclusion](#pearsons-correlation-conclusion)  
    * **4.4** [Euclidean Distance Conclusion](#euclidean-distance-conclusion)  
    * **4.5** [K-Means Clustering Conclusion](#k-means-clustering-conclusion)  
-5. [**Conclusion**](#conclusion)  
-6. [**What Did I Learn?**](#what-did-i-learn)  
-7. [**Future Work**](#future-work)  
-8. [**References**](#references)  
+6. [**Conclusion**](#conclusion)  
+7. [**What Did I Learn?**](#what-did-i-learn)  
+8. [**Future Work**](#future-work)  
+9. [**References**](#references)  
+
+---
+
+## **Project Structure**
+
+- **`KDB_Replacement_Analysis.ipynb`**:  
+  A Jupyter notebook containing the main program for the player replacement analysis. 
+  
+- **`data_files`**:  
+  Contains various CSV data files, saved from the main Jupyter notebook and from external sources.
 
 ---
 
